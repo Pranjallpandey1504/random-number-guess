@@ -1,37 +1,49 @@
-var msg1 = document.getElementById("message1");
-var msg2 = document.getElementById("message2");
-var msg3 = document.getElementById("message3");
+let randomNumber;
+let minRange;
+let maxRange;
+let score = 0;
 
-var answer = Math.floor(Math.random()*100) + 1;
-var no_of_guesses = 0;
-var guessed_nums = [];
+function startGame() {
+  // Get min and max range from the user input
+  minRange = parseInt(document.getElementById('minRange').value);
+  maxRange = parseInt(document.getElementById('maxRange').value);
 
-function play(){
-    var user_guess = document.getElementById("guess").value;
-    if(user_guess < 1 || user_guess > 100){
-        alert("Please enter a number between 1 and 100.");
-    }
-    else{
-        guessed_nums.push(user_guess);
-        no_of_guesses+= 1;
+  // Validate the range inputs
+  if (isNaN(minRange) || isNaN(maxRange) || minRange >= maxRange) {
+    alert("Please enter valid ranges (Min < Max).");
+    return;
+  }
 
-        if(user_guess < answer){
-            msg1.textContent = "Your guess is too low.";
-            msg2.textContent = "No. of guesses: " + no_of_guesses;
-            msg3.textContent = "Guessed numbers are: " +
-            guessed_nums;
-        }
-        else if(user_guess > answer){
-            msg1.textContent = "Your guess is too high.";
-            msg2.textContent = "No. of guesses: " + no_of_guesses;
-            msg3.textContent = "Guessed numbers are: " +
-            guessed_nums;
-        }
-        else if(user_guess == answer){
-            msg1.textContent = "Yippie You Win!!";
-            msg2.textContent = "The number was: " + answer;
-            msg3.textContent = "You guessed it in "+ no_of_guesses + " guesses";
-            document.getElementById("my_btn").disabled = true;
-        }
-    }
+  // Generate a random number within the specified range
+  randomNumber = Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange;
+
+  // Hide the input fields and show the game area
+  document.getElementById('gameArea').style.display = 'block';
+  document.getElementById('instructions').textContent = `Guess the number between ${minRange} and ${maxRange}!`;
+  document.getElementById('score').textContent = 'Score: ' + score;
+}
+
+function checkGuess() {
+  const guess = parseInt(document.getElementById('guessInput').value);
+
+  if (isNaN(guess)) {
+    alert("Please enter a valid number.");
+    return;
+  }
+
+  if (guess === randomNumber) {
+    score++;
+    document.getElementById('message').textContent = "Congratulations! You guessed the correct number!";
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('score').textContent = 'Score: ' + score;
+
+    // Generate a new number for the next round
+    randomNumber = Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange;
+  } else if (guess < randomNumber) {
+    document.getElementById('message').textContent = "Too low! Try again.";
+    document.getElementById('message').style.color = 'blue';  // changed color to blue
+  } else {
+    document.getElementById('message').textContent = "Too high! Try again.";
+    document.getElementById('message').style.color = 'blue';  // changed color to blue
+  }
 }

@@ -1,59 +1,68 @@
-*,
-*:before,
-*:after{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;  /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background: linear-gradient(
-        to right,
-        #7f53ac,
-        #657ced
-    );
 }
-.container{
-    position: absolute;
-    width: 50%;
-    min-width: 580px;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    background-color: #ffffff;
-    padding: 50px 10px;
-    border-radius: 5px;
-    display: grid;
-    justify-items: center;
-    font-family: 'Poppins',sans-serif;
-}
-h3{
-    font-size: 16px;
-    font-weight: 600;
-}
-input[type="text"]{
-    width: 90px;
-    font-weight: 600;
-    color: #663399;
-    padding: 20px 0;
+
+.game-container {
     text-align: center;
-    margin-top: 30px;
-    border-radius: 5px;
-    border: 2px solid #202020;
-    font-size: 28px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
 }
-button{
-    width: 160px;
-    padding: 15px 0;
+
+h1 {
+    color: #0288d1;  /* Dark blue for the title */
+}
+
+input[type="number"] {
+    padding: 8px;
+    margin: 10px;
+    width: 120px;
+    border: 1px solid #0288d1;  /* Blue border for input fields */
     border-radius: 5px;
-    background-color: #663399;
-    color: #ffffff;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #0288d1;  /* Blue button */
+    color: white;
     border: none;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
-p{
-    font-weight: 400;
+
+button:hover {
+    background-color: #01579b;  /* Darker blue on hover */
+}
+
+#gameArea {
+    margin-top: 20px;
+}
+
+#score {
+    font-size: 18px;
+    color: #0288d1;  /* Blue score color */
+}
+
+p {
+    font-size: 18px;
+    color: #0288d1;  /* Blue text color for the instructions */
+}
+
+#message {
+    color: #01579b;  /* Dark blue for the message */
+    font-weight: bold;
 }
