@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Number Guesser</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="game-container">
-    <h1>Guess the Number!</h1>
-    <div>
-      <label for="minRange">Enter Min Range: </label>
-      <input type="number" id="minRange" placeholder="Min Range">
+    <div class="table-container">
+        <h1>Project Links</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Random number guess</td>
+                    <td><a href="guess.html">Guess number</a></td>
+                </tr>
+                <tr>
+                    <td>Random Password Generator</td>
+                    <td><a href="password.html">Password Generator</a></td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
     </div>
-    <div>
-      <label for="maxRange">Enter Max Range: </label>
-      <input type="number" id="maxRange" placeholder="Max Range">
-    </div>
-    <button onclick="startGame()">Start Game</button>
-    
-    <div id="gameArea" style="display: none;">
-      <p id="instructions">Guess the number between the specified range!</p>
-      <input type="number" id="guessInput" placeholder="Enter your guess">
-      <button onclick="checkGuess()">Submit Guess</button>
-      <p id="message"></p>
-      <p id="score">Score: 0</p>
-    </div>
-  </div>
-
-  <script src="game.js"></script>
 </body>
 </html>

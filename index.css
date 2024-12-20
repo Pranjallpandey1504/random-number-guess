@@ -1,0 +1,69 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Container styling for the table */
+.table-container {
+    margin: 0 auto;
+    max-width: 800px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table title */
+.table-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue accent */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+/* Header row styling */
+thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eaf3ff;
+}
+
+/* Links styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hover effect on rows */
+tbody tr:hover {
+    background-color: #d5e9ff;
+}
